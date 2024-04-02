@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with Arrays and HTML</title>
+    <script>
+
+    </script>
+</head>
+<body>
+<h1>Working with Arrays and HTML</h1>
+<h2>Computer Languages</h2>
+<ul id="languages">
+
+</ul>
+</body>
+<script>
+const list = document.getElementById("languages");
+const languages = ["JavaScript", "Go", "Java", "Python", "Swift"];
+let html = "";
+for (let i = 0; i < languages.length; i++) {
+	html += `<li>${languages[i]}</li>`;
+}
+list.innerHTML = html;
+
+const printItems = function(item) {
+	console.log(item);
+};
+languages.forEach(printItems);
+
+html = "";
+languages.forEach(function(item) {
+	html += `<li>${ item }</li>`;
+});
+list.innerHTML = html;
+
+</script>
+</html>

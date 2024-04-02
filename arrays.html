@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with Arrays</title>
+    <script>
+const values = [4, 8, 15, 16, 23, 42];
+console.log(values);
+
+let value = values[0];
+console.log(value); // 4
+
+value = values[5];
+console.log(value); // 42
+
+value = values[6];
+console.log(value); // undefined
+
+values[3] = 20;
+console.log(values); // [4, 8, 15, 20, 23, 42]
+
+values[6] = 100;
+console.log(values); // [4, 8, 15, 20, 23, 42, 100]
+
+let len = values.length;
+console.log(len);
+values[len] = 200;
+console.log(values); // [4, 8, 15, 20, 23, 42, 100, 200]
+
+values.push(300); // add 300 to the end of the array
+console.log(values); // [4, 8, 15, 20, 23, 42, 100, 200, 300]
+
+let end = values.pop();
+console.log(values); // [4, 8, 15, 20, 23, 42, 100, 200]
+console.log(end); // 300
+
+let beginning = values.shift();
+console.log(values); // [8, 15, 20, 23, 42, 100, 200]
+console.log(beginning); // 4
+
+values.unshift(4);
+console.log(values); // [4, 8, 15, 20, 23, 42, 100, 200]
+
+// can store arrays in arrays
+values[3] = [98, 99];
+console.log(values); // [4, 8, 15, [98, 99], 23, 42, 100, 200]
+
+value = values[3];
+console.log(value); // [98, 99]
+console.log(value[1]); // 99
+
+value = values[3][1];
+console.log(value); // 99
+
+// can store objects in arrays
+let cars = [ { make: "Chevy", model: "Bel Air" }, { make: "GM", model: "Cadillac" }];
+console.log(cars);
+console.log(cars[0]); // {make: 'Chevy', model: 'Bel Air'}
+
+// iterating with arrays
+values[3] = 0;
+console.log(values); // [4, 8, 15, 0, 23, 42, 100, 200]
+
+let sum = 0;
+for (let i = 0; i < values.length; i++) {
+	sum += values[i];
+}
+console.log(`Sum is ${sum}`); // Sum is 392
+
+    </script>
+</head>
+<body>
+    <h1>Working with Arrays</h1>
+</body>
+</html>

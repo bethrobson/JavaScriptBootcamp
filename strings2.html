@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with Strings as Objects</title>
+    <script>
+let str = "Hello World";
+console.log(str.length); // 11
+
+let upper = str.toUpperCase();
+console.log(upper); // HELLO WORLD
+console.log(str);   // Hello World
+
+let sliced = str.slice(0, 5);
+console.log(sliced); // Hello
+
+let replaced = str.replace("World", "Class");
+console.log(replaced); // Hello Class
+replaced = str.replace("world", "Class"); // replace is case sensitive
+console.log(replaced); // Hello World
+
+let str2 = "Hello World World";
+replaced = str2.replace("World", "Class"); // replace will do the first word
+console.log(replaced); // Hello Class World
+
+replaced = str2.replaceAll("World", "Class");
+console.log(replaced); // Hello Class Class 
+
+    </script>
+</head>
+<body>
+    <h1>Working with Strings as Objects</h1>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with Functions</title>
+    <script>
+// A function that doesn't return a value
+function greet(name) {
+	console.log(`${name} says "hi"`);
+}
+greet("Jim"); // Jim says "hi"
+let answer = greet("Jane");
+console.log(`answer is ${answer}`); // answer is undefined
+
+// A function that returns a value
+function sum(a, b) {
+	return a + b;
+}
+console.log(sum(3, 4)); // 7
+console.log(sum("hi ", "there")); // "hi there"
+
+// Function expressions
+const greeter = function (name) {
+	console.log(`${name} says "greetings"`);
+};
+greeter("Joe"); // Joe says "greetings"
+
+// Hoisting
+let migrating = true;
+if (migrating) {
+	quack(4); // no problem, because quack is a declared function
+	fly(4); // error - cannot access fly before initialization
+}
+// move this to before we invoke fly() to get the code to work
+let fly = function() {
+	console.log("Flying!");
+};
+function quack(num) {
+	console.log("Quack!");
+}
+
+    </script>
+</head>
+<body>
+    <h1>Working with Functions</h1>
+</body>
+</html>

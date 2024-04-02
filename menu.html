@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Styling a Menu with CSS</title>
+	<style>
+body {
+	position: relative;
+}
+nav#menu {
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+nav#menu a {
+	color: white;
+	text-decoration: none;
+}
+nav#menu > ul {
+	display: flex;
+	list-style: none;
+}
+nav#menu > ul li a:hover, nav#menu > ul li:hover {
+	color: orange;
+	cursor: pointer;
+}
+nav#menu > ul li, nav#fruits > ul li {
+	padding: 10px;
+}
+nav#fruits {
+	position: absolute;
+	background-color: orange;
+	color: white;
+	padding: 10px;
+}
+nav#fruits > ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+nav#fruits > ul li:hover {
+	color: black;
+	cursor: pointer;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: inline-block;
+}
+	</style>
+	<script>
+
+	</script>
+</head>
+<body>
+<nav id="menu">
+<ul>
+<li id="home"><a href="menu.html">Home</a></li>
+<li id="about"><a href="">About</a></li>
+<li id="fruitMenu">Fruit</li>
+</ul>
+</nav>
+<nav class="hide" id="fruits">
+<ul>
+<li>Apples</li>
+<li>Oranges</li>
+<li>Bananas</li>
+</ul>
+</nav>
+<!-- rest of page here -->
+</body>
+</html>
+
+
+

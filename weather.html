@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Styling Weather with CSS</title>
+	<style>
+h1 {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+.normal {
+	color: #333;
+	background-color: #f0f0f0;
+}
+.warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+}
+.danger {
+	color: #a94442;
+	background-color: #f2dede;
+}
+.freezing {
+	color: #3262a8;
+	background-color: #bce0f5;
+}
+	</style>
+</head>
+<body>
+<h1 class="" id="report">Current Conditions</h1>
+</body>
+<script>
+let temp = Math.floor(Math.random() * 120); // temp in F
+const report = document.getElementById("report");
+report.innerHTML += ` (${ temp })`;
+if (temp > 100) {
+	report.classList.add("danger");
+} else if (temp > 90) {
+	report.classList.add("warning");
+} else if (temp > 32) {
+	report.classList.add("normal");
+} else {
+	report.classList.add("freezing");
+}
+
+// Part 2
+let reportClass = report.getAttribute("class");
+if (reportClass == "danger") {
+	setTimeout(promptAC, 5000);
+}
+function promptAC() {
+	let hasAC = prompt("Do you have AC? Enter yes or no:");
+	if (hasAC && hasAC.toLowerCase() == "yes") {
+		report.classList.replace("danger", "warning");
+		report.innerHTML += " with AC";
+	}
+}
+
+report.classList.add("summer");
+report.classList.forEach(function(c) {
+	console.log(c);
+});
+
+</script>
+</html>

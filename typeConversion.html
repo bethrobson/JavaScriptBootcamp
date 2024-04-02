@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type Conversion</title>
+    <script>
+let testMe = "99";
+// compare values of the same type
+if (testMe == "99") {
+	console.log("testMe is equal to \"99\"!");
+} else {
+	console.log("testMe is NOT equal to \"99\"!");
+}
+// compare a string and a number, convert string to number
+if (testMe == 99) {
+	console.log("testMe is equal to 99!");
+} else {
+	console.log("testMe is NOT equal to 99!");
+}
+// compare number and string that can't be converted to a number
+testMe = 99;
+if (testMe == "vanilla") {
+	console.log("99 can't ever be equal to \"vanilla\"");
+} else {
+	console.log("99 can't ever be equal to \"vanilla\"");
+}
+// compare number and boolean, convert the boolean to a number
+testMe = 1;
+if (testMe == true) {
+	console.log("1 is equal to true"); // true -> 1, false -> 0
+} else {
+	console.log("1 is not equal to true");
+}
+testMe = 99;
+if (testMe == true) {
+	console.log("99 is equal to true");
+} else {
+	console.log("99 is not equal to true"); // 99 is not equal to 1
+}
+testMe = "1";
+if (testMe == true) {
+	console.log("\"1\" is equal to true"); // true -> 1, "1" -> 1
+} else {
+	console.log("\"1\" is not equal to true");
+}
+testMe = undefined;
+if (testMe == null) {
+	console.log("undefined equals null"); // yup
+} else {
+	console.log("undefined is not equal to null");
+}
+testMe = 0;
+if (testMe == "") {
+	console.log("0 is equal the empty string \"\"");
+} else {
+	console.log("0 is NOT equal the empty string \"\"");
+}
+
+let pizza = "pizza";
+let order = 3 + pizza;
+console.log(order); // "3pizza"
+console.log(3 * "99"); // 297
+let str = Number(99).toString();
+console.log(str); // "99"
+
+// truthy and falsey
+// falsey values
+testMe = undefined; // try null, 0, "", NaN, anything else
+if (testMe) {
+	console.log(`${ testMe } is truthy`);
+} else {
+	console.log(`${ testMe } is falsey`);
+}
+
+// everything else is truthy
+testMe = "yes";
+if (testMe) {
+	console.log(`${ testMe } is truthy`);
+} else {
+	console.log(`${ testMe } is falsey`);
+}
+
+    </script>
+</head>
+<body>
+<h1>Type Conversion and Truthy and Falsey</h1>
+<h2>Rules of Type Conversion</h2>
+<p>When using == to compare</p>
+<ul>
+<li>If two values have the same type, just compare them.</li>
+<li>If two values have different types, try to convert them into the same type, and then compare them.</li>
+</ul>
+<h2>How types are converted for comparison</h2>
+<ol>
+<li>Number and a string: try to convert the string to a number.</li>
+<li>Boolean with any other type: convert the boolean to a number. true -> 1, false -> 0.</li>
+<li>null and undefined: true</li>
+</ol>
+<h2>Truthy and Falsey</h2>
+<p>The five falsey values (everything else is truthy):</p>
+<ul>
+<li>undefined</li>
+<li>null</li>
+<li>0</li>
+<li>""</li>
+<li>NaN</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with booleans and conditionals</title>
+    <script>
+let isHappy = true;
+let isSad = false;
+
+let score = 80;
+let attendance = 100;
+let passedFinal = score > 65;
+console.log(passedFinal); // true
+let perfectAttendance = attendance == 100;
+console.log(perfectAttendance); // true
+
+let award = passedFinal && perfectAttendance;
+console.log(award); // true
+
+passedFinal = score > 50;
+console.log(passedFinal); // false
+
+award = passedFinal && perfectAttendance;
+console.log(award); // false
+
+// we could loosen up the requirements and give an award if they either passed the final or had perfect attendance:
+
+award = passedFinal || perfectAttendance;
+console.log(award); // true
+
+// we can also use! which inverts the true false value:
+let noAward = !award;
+console.log(noAward); // false
+
+noAward != award
+
+// Conditionals
+let movieRating = 'PG';
+if (movieRating === 'G') {
+   console.log('Suitable for all ages.');
+}
+
+if (movieRating === 'G') {
+   console.log('Suitable for all ages.');
+} else if (movieRating === 'PG') {
+   console.log('May require parental guidance.');
+} else if (movieRating === 'PG-13') {
+   console.log('Parents strongly cautioned.');
+} else {
+   console.log('Not suitable for children.');
+}
+
+let one = 1;
+let zero = 0;
+if (one == zero) {
+   console.log("1 is equal to 0");
+} else {
+   console.log("1 is not equal to 0");
+}
+let r = one/zero;
+if (r == Infinity) {
+   console.log("Wow, infinity!");
+}
+
+let imaginary = Math.sqrt(-9);
+console.log(imaginary);
+if (isNaN(imaginary)) {
+   console.log("Oops, we can't represent imaginary numbers in JavaScript");
+}
+    </script>
+</head>
+<body>
+    <h1>Working with Booleans and Conditionals</h1>
+</body>
+</html>

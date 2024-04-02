@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Harry Potter World</title>
+</head>
+<body>
+   <div id="wizarding-world">
+       <header>
+           <h1>Welcome to Hogwarts</h1>
+           <nav>
+               <ul>
+                   <li><a href="#houses">Houses</a></li>
+                   <li><a href="#spells">Spells</a></li>
+                   <li><a href="#quidditch">Quidditch</a></li>
+               </ul>
+           </nav>
+       </header>
+       <section id="houses">
+           <h2>Hogwarts Houses</h2>
+           <div class="house" id="gryffindor">
+               <h3>Gryffindor</h3>
+               <p>House of the brave and chivalrous.</p>
+           </div>
+           <div class="house" id="slytherin">
+               <h3>Slytherin</h3>
+               <p>House of the ambitious and cunning.</p>
+           </div>
+       </section>
+       <section id="spells">
+           <h2>Popular Spells</h2>
+           <ul>
+               <li>Expelliarmus - Disarming Charm</li>
+               <li>Lumos - Wand-Lighting Charm</li>
+           </ul>
+       </section>
+       <footer>
+           <p>&copy; 2024 Wizarding World Fans</p>
+       </footer>
+   </div>
+</body>
+<script>
+// Uncomment 1 section at a time to try the code
+/*
+const elements = document.getElementsByTagName("p");
+for (let i = 0; i < elements.length; i++) {
+	elements[i].style.color = "gold";
+}
+
+const element = document.querySelector("footer > p");
+element.style.color = "gold";
+
+const elements = document.getElementsByTagName("p");
+for (let i = 0; i < elements.length; i++) {
+	elements[i].style.color = "gold";
+}
+
+const elements = document.querySelectorAll("section#houses h3");
+for (let i = 0; i < elements.length; i++) {
+	elements[i].style.color = "gold";
+}
+const elements = document.querySelectorAll("p");
+elements.forEach(function(el) {
+	el.style.color = "gold";
+});
+*/
+// create a new div element for ravenclaw
+let ravenclaw = document.createElement("div");
+// set the attributes for class and id
+ravenclaw.setAttribute("class", "house");
+ravenclaw.setAttribute("id", "ravenclaw");
+// create a new h3 heading and add it to the div
+let ravenclawHeading = document.createElement("h3");
+ravenclawHeading.innerHTML = "Ravenclaw";
+ravenclaw.appendChild(ravenclawHeading);
+// create a new p and add it to the div
+let ravenclawMotto = document.createElement("p");
+ravenclawMotto.innerHTML = "House of the witty beyond measure.";
+ravenclaw.appendChild(ravenclawMotto);
+// get the houses section and add the new ravenclaw div
+let houses = document.getElementById("houses");
+houses.appendChild(ravenclaw);
+
+// Exercise: set alternating background colors for the houses
+let allHouses = document.querySelectorAll(".house");
+for (let i = 0; i < allHouses.length; i++) {
+	if (i % 2 == 0) {
+		allHouses[i].style.backgroundColor = "gold";
+	} else {
+		allHouses[i].style.backgroundColor = "yellow";
+	}
+}
+
+// Exercise: add new Quidditch section before the footer
+let qSection = document.createElement("section");
+qSection.setAttribute("id", "quidditch");
+let qH2 = document.createElement("h2");
+qH2.innerHTML = "Quidditch Rules";
+let qP = document.createElement("p");
+qP.innerHTML = 
+	"Quidditch has seven players on each team. " +
+	"The player roles are three Chasers, one Keeper, two Beaters, and one Seeker. " +
+	"There are four balls: a Quaffle, a Snitch, and two Bludgers. " +
+	"There are three hoops. " +
+	"Players get 10 points per goal, and 150 points if they catch the Snitch. " +
+	"Each player rides a broomstick.";
+qSection.appendChild(qH2);
+qSection.appendChild(qP);
+
+let wwDiv = document.getElementById("wizarding-world");
+let footer = document.querySelector("footer");
+wwDiv.insertBefore(qSection, footer);
+
+</script>
+</html>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables</title>
+    <script>
+let score = 0;
+console.log(score);
+
+//let score = 1; // error! can't redeclare a variable
+
+let customers;
+console.log(customers);
+
+const diameter = 5; // cannot change this value
+console.log(diameter);
+//diameter = 7; // error!
+
+let name = "Sherlock";
+let isHome = false;
+let age = 42;
+let address = undefined;
+let city = null;
+
+console.log(typeof name); // string
+console.log(typeof isHome); // boolean
+console.log(typeof age); // number
+
+age = 42.83;
+console.log(typeof age); // number
+
+console.log(typeof address); // undefined
+console.log(typeof city); // object, but should be null
+
+score = 6;
+score = 6 + 1; // 7
+score = score + 1; // 8
+score = (score / 2) * 10; // 
+console.log(score);
+
+let bonus = 10;
+score = score + bonus; // 50
+console.log(score);
+    </script>
+</head>
+<body>
+<h1>Variables</h1>
+<h2>Naming Rules</h2>
+<ul>
+<li>JavaScript is case-sensitive. This means myVariable, MyVariable, and MYVARIABLE are three different variables.</li>
+<li>Start with Letters, $, or _: Variable names must begin with a letter (a-z, A-Z), an underscore (_), or a dollar sign ($). </li>
+<li>After the first character, variable names can include letters, digits (0-9), dollar signs ($), and underscores (_).</li>
+<li>Variable names cannot use JavaScript reserved words (like var, let, const, if, else, for, etc.).</li>
+</ul>
+
+</body>
+</html>

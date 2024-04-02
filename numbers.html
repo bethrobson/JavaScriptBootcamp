@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with Numbers</title>
+    <script>
+// Math
+let rand = Math.random(); // Random number between 0 - 1 (not including 1)
+console.log(rand);
+
+rand = Math.floor(Math.random() * 10); // random integer 0-9
+console.log(rand);
+
+rand = Math.ceil(Math.random() * 10); // random integer 1-10
+console.log(rand);
+
+rand = Math.round(Math.random() * 10); // random integer 0-10
+console.log(rand);
+
+let i = 10; // integer
+console.log(i);
+let f1 = 4.32101234e3; // floating point number
+console.log(f1);
+
+let f2Str = "3.141";
+let f2 = parseFloat(f2Str);
+console.log(f2);
+
+let zStr = "90210";
+let z = parseInt(zStr);
+console.log(z);
+
+let y1 = Math.log2(8); // 3 because 2 x 2 x 2 = 8
+let y2 = Math.log2(16); // 4 because 2 x 2 x 2 x 2 = 16
+let y3 = Math.log10(100); // 2 because 10 x 10 = 100
+console.log(y1, y2, y3);
+
+let x = Math.sqrt(9); // 3
+console.log(x);
+
+let min = Math.min(97, 98, 99, 100, 11, 12, 13);
+console.log(min); // 11
+let max = Math.max(97, 98, 99, 100, 11, 12, 13);
+console.log(max); // 100
+
+console.log(Math.PI);
+
+let one = 1;
+let zero = 0;
+let r = one/zero; // Infinity
+
+let weird = 10/"pizza";
+console.log(weird);
+
+let imaginary = Math.sqrt(-9);
+console.log(imaginary);
+
+// many other useful things in Math
+
+    </script>
+</head>
+<body>
+    <h1>Working with Numbers</h1>
+</body>
+</html>

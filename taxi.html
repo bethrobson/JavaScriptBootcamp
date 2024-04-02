@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taxi object exercise</title>
+    <script>
+const taxi = {
+	make: "Chevy",
+	model: "Bel Air",
+	year: 1957,
+	speed: 0,
+	started: false,
+	fare: 2.50,
+	passenger: null,
+
+	start() {
+		if (!this.started) {
+			this.started = true;
+			console.log(`The ${this.year} ${this.make} ${this.model} is starting`);
+		}
+	},
+	stop() {
+		if (this.started) {
+			this.started = false;
+			this.speed = 0;
+			console.log(`The ${this.year} ${this.make} ${this.model} is stopped`);
+		} else {
+			console.log(`The ${this.year} ${this.make} ${this.model} isn't running`);
+		}
+	},
+	drive(speed) {
+		if (this.started) {
+			this.speed = speed;
+			console.log(`The ${this.year} ${this.make} ${this.model} is driving at ${this.speed} mph`);
+		}
+	},
+	brake() {
+		if (this.speed > 0) {
+			this.speed = 0;
+			console.log(`The ${this.year} ${this.make} ${this.model} has braked`);
+		}
+	},
+	hail(passenger) {
+		if (this.passenger) { // if passenger is not null, we already have a passenger
+			console.log("Sorry, this taxi is occupied");
+		} else {
+			this.passenger = passenger;
+			console.log(`Welcome ${this.passenger.name}`);
+			console.log(`On our way to ${this.passenger.destination}`);
+		}
+	},
+	pay(amount) {
+		if (!this.passenger) {
+			console.log("This taxi has no passengers");
+		} else {
+			if (amount >= this.fare) {
+				console.log(`Thank you ${this.passenger.name}, have a great day`);
+				this.passenger = null;
+			} else {
+				console.log(`The fare is ${this.fare}`);
+			}
+		}
+	}
+};
+
+let passenger = {
+	name: "Jane Smith",
+	destination: "Lankershim Blvd"
+};
+taxi.hail(passenger);
+taxi.pay(1.00); // not enough money
+taxi.pay(3.00);
+
+    </script>
+</head>
+<body>
+    <h1>Taxi Object Exercise</h1>
+</body>
+</html>

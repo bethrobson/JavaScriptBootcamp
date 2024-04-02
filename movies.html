@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Movies</title>
+</head>
+<body>
+   <h1>Movie Showtimes</h1>
+   <h2 id="theater1">Plan 9 from Outer Space</h2>
+   <p id="movietimes1">Playing at 3:00pm, 7:00pm.</p>
+   <h2 id="theater2">Forbidden Planet</h2>
+   <p id="movietimes2">Playing at 5:00pm, 9:00pm.</p>
+</body>
+<script>
+const theater = document.getElementById("movietimes1");
+console.log(theater.innerHTML);
+theater.innerHTML += "<span> Special showing tonight at <em>midnight</em>! </span>";
+console.log(theater.innerHTML);
+theater.style.color = "red";
+</script>
+</html>

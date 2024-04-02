@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope</title>
+    <script>
+let msg = "I'm global!";
+console.log(msg);
+
+function checkScope(param) {
+	let msg = "I'm local to a function";
+	console.log(msg);
+	console.log(param); // prints the value passed in
+}
+checkScope("I'm a parameter local to a function block");
+//console.log(param) // ERROR, param is local to checkScope
+
+function checkScope2() {
+	let msg = "I'm also local to a function";
+	console.log(msg);
+}
+checkScope2();
+
+function checkScope3() {
+	let msg = "I'm local to a function";
+	if (true) {
+		let msg = "I'm local to a conditional";
+		console.log(msg); //"I'm local to a conditional"
+	}
+	console.log(msg); // "I'm local to a function"
+}
+checkScope3();
+
+    </script>
+</head>
+<body>
+    <h1>Working with Scope</h1>
+</body>
+</html>

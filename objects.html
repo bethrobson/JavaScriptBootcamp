@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+    <script>
+const car = {
+	make: "Chevy",
+	model: "Bel Air",
+	year: 1957,
+	speed: 0,
+	started: false,
+
+	start() {
+		if (!this.started) {
+			this.started = true;
+			console.log(`The ${this.year} ${this.make} ${this.model} is starting`);
+		}
+	},
+	stop() {
+		if (this.started) {
+			this.started = false;
+			this.speed = 0;
+			console.log(`The ${this.year} ${this.make} ${this.model} is stopped`);
+		} else {
+			console.log(`The ${this.year} ${this.make} ${this.model} isn't running`);
+		}
+	},
+	drive(speed) {
+		if (this.started) {
+			this.speed = speed;
+			console.log(`The ${this.year} ${this.make} ${this.model} is driving at ${this.speed} mph`);
+		}
+	},
+	brake() {
+		if (this.speed > 0) {
+			this.speed = 0;
+			console.log(`The ${this.year} ${this.make} ${this.model} has braked`);
+		}
+	}
+};
+console.log(`The car is a ${car.year} ${car.make} ${car.model}`);
+
+if (2024 - car.year > 25) {
+	console.log("It's an antique!");
+}
+
+car.speed = 100;
+console.log(`The ${car.year} ${car.make} ${car.model} is driving at ${car.speed} mph`);
+car.passengers = 2;
+console.log(`The ${car.year} ${car.make} ${car.model} has ${car.passengers} passengers`);
+car.start();
+car.start();
+car.drive(100);
+car.brake();
+car.stop();
+car.stop();
+    </script>
+</head>
+<body>
+    <h1>Objects</h1>
+</body>
+</html>
