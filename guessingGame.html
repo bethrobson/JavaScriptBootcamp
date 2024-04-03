@@ -22,6 +22,7 @@ while (!finished) {
 		if (guess === secretNumber) {
 			alert("Congratulations! You guessed the right number.");
 			finished = true;
+			break;
 		} else if (guess < secretNumber) {
 			alert("Too low. Try again.");
 		} else if (guess > secretNumber) {
