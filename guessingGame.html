@@ -13,6 +13,9 @@ let finished = false;
 
 while (!finished) {
    let response = prompt(`Guess a number between 1 and 100,  Try #${(tries + 1)}:`, 'number');
+   if (response == null) { // cancel
+      break;
+   }
    let guess = parseInt(response);
 
    if (isNaN(guess)) {
