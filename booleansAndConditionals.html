@@ -35,19 +35,20 @@ console.log(noAward); // false
 noAward != award
 
 // Conditionals
-let movieRating = 'PG';
-if (movieRating === 'G') {
-   console.log('Suitable for all ages.');
-}
+let tree = "fir";
+let birds = 3;
+let birdWatching = false;
 
-if (movieRating === 'G') {
-   console.log('Suitable for all ages.');
-} else if (movieRating === 'PG') {
-   console.log('May require parental guidance.');
-} else if (movieRating === 'PG-13') {
-   console.log('Parents strongly cautioned.');
+if (tree === "fir" && birds >= 2) {
+    birdWatching = true;
+    console.log("It's a fir tree");
+} else if (tree === "pine") {
+    console.log("It's a pine tree");
 } else {
-   console.log('Not suitable for children.');
+    console.log("Unknown tree");
+}
+if (birdWatching === true) {
+    console.log("We're birdwatching!");
 }
 
 let one = 1;
